@@ -1336,6 +1336,21 @@
   font-size: 1rem;
 }
 
+/* Fullscreen only makes sense on a wall tablet (kiosk), portrait included:
+   shown once the screen is at least 576px in both dimensions, so tablets get
+   it in either orientation while phones never do — not even in landscape,
+   where their height stays well below that. Mirrors Bootstrap's d-* utilities
+   (hence !important) so it wins over .btn's own display. */
+.tabletOnlyAction {
+  display: none !important;
+}
+
+@media (min-width: 576px) and (min-height: 576px) {
+  .tabletOnlyAction {
+    display: inline-flex !important;
+  }
+}
+
 /* pressing a tappable row gives immediate feedback — the whole-row tap is a
    coarse-pointer affordance only (the JS handler is gated the same way):
    with a mouse, the switch itself is a comfortable target and a click on
