@@ -107,7 +107,7 @@ const DashboardPage = ({ children, ...props }) => {
                         </button>
                       </Localizer>
                     )}
-                    {/* fullscreen is pointless on a phone: hidden below tablet width.
+                    {/* fullscreen is shown at every width (phones and tablets included).
                         Only for a loaded dashboard with widgets — not while the
                         configuration is still being fetched */}
                     {props.currentDashboard &&
@@ -117,7 +117,7 @@ const DashboardPage = ({ children, ...props }) => {
                         <Localizer>
                           <button
                             onClick={props.toggleFullScreen}
-                            class={cx('btn btn-outline-secondary ml-2 d-none d-md-inline-flex')}
+                            class={cx('btn btn-outline-secondary ml-2 d-inline-flex')}
                             title={
                               props.fullScreen ? (
                                 <Text id="dashboard.disableFullScreen" />
